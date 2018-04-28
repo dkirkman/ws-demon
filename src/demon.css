@@ -1,0 +1,4 @@
+/* override for just this component, it makes dat.gui work properly */
+.demon ul li {
+    margin-bottom: 0;
+}    
