@@ -4,7 +4,6 @@ import chroma from 'chroma-js';
 
 class Demon extends Component {
   constructor(props) {
-    console.log('super a go go demon');
     super(props);
 
     this.go_update = this.go_update.bind(this);
@@ -297,33 +296,11 @@ class Demon extends Component {
       }
     }
   }
-  
-  temp_num_string(val) {
-    let str = val.toString();
-    if (str.length == 1) str = ' ' + str;
 
-    return str;
-  }
   create_dom_elements_and_go() {    
     this.demon_div = this.myRef.current;
     this.canvas = document.createElement('canvas');
     
-    this.canvas.addEventListener('click', event => {
-      let x = event.pageX - this.canvas.offsetLeft;
-      let y = event.pageY - this.canvas.offsetTop;
-
-      var i, j;
-      for (j=y-10; j<=y+10; ++j) {
-        let line = '';
-        for (i=x-10; i<=x+10; ++i) {
-          line += this.temp_num_string(this.view[j*this.width+i]);
-          line += '  ';
-        }
-        console.log(line);
-      }
-      console.log('CLICK CLICK .... CLICK! ' + x + '  ' + y);
-    });
-
     this.buffer = new ArrayBuffer(this.width*this.height);
     this.view = new Uint8Array(this.buffer);
     this.buffer2 = new ArrayBuffer(this.width*this.height);
