@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.jsx',
+  devtool: 'sourcemap',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'index.js',
